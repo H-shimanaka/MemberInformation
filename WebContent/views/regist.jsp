@@ -21,8 +21,8 @@
 				名 <input type="text" id="first_name" name="first_name" maxlength="20"></li>
 
 			<li>性別<br>
-				<input type="radio" name="sex" value="男">男
-				<input type="radio" name="sex" value="女">女</li>
+				<input type="radio" name="sex" value="1">男
+				<input type="radio" name="sex" value="2">女</li>
 
 			<li>生年月日<br>
 				<select name="birth_year" id="birth_year"><option value=""></option></select> 年
@@ -32,10 +32,10 @@
 			<li>職業<br>
 				<select id="job" name="job">
 					<option value=""></option>
-					<option value="会社員">会社員</option>
-					<option value="自営業">自営業</option>
-					<option value="学生">学生</option>
-					<option value="その他">その他</option>
+					<option value="100">会社員</option>
+					<option value="200">自営業</option>
+					<option value="300">学生</option>
+					<option value="400">その他</option>
 				</select></li>
 
 			<li>電話番号<br>

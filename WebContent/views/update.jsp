@@ -29,16 +29,16 @@
 			<li>性別<br>
 				<c:choose>
 				<c:when test="${mb.sex == '男'}">
-				<input type="radio" name="sex" value="男" checked>男
-				<input type="radio" name="sex" value="女">女
+				<input type="radio" name="sex" value="1" checked>男
+				<input type="radio" name="sex" value="2">女
 				</c:when>
 				<c:when test="${mb.sex == '女'}">
-				<input type="radio" name="sex" value="男">男
-				<input type="radio" name="sex" value="女" checked>女
+				<input type="radio" name="sex" value="1">男
+				<input type="radio" name="sex" value="2" checked>女
 				</c:when>
 				<c:otherwise>
-				<input type="radio" name="sex" value="男">男
-				<input type="radio" name="sex" value="女">女
+				<input type="radio" name="sex" value="1">男
+				<input type="radio" name="sex" value="2">女
 				</c:otherwise>
 				</c:choose></li>
 
@@ -46,31 +46,44 @@
 				<select name="birth_year" id="birth_year">
 					<option value=""></option>
 					<c:if test="${not empty mb.birth_year}">
-						<option value = "${mb.birth_year}" selected>${mb.birth_year}</option>
+						<option value = "${mb.birth_year}" selected>${mb.birth_year}(設定値)</option>
 					</c:if>
 				</select> 年
 				<select name="birth_month" id="birth_month">
 					<option value=""></option>
 					<c:if test="${not empty mb.birth_month}">
-						<option value = "${mb.birth_month}" selected>${mb.birth_month}</option>
+						<option value = "${mb.birth_month}" selected>${mb.birth_month}(設定値)</option>
 					</c:if>
 				</select> 月
 				<select name="birth_day" id="birth_day">
 					<option value=""></option>
 					<c:if test="${not empty mb.birth_day}">
-						<option value = "${mb.birth_day}" selected>${mb.birth_day}</option>
+						<option value = "${mb.birth_day}" selected>${mb.birth_day}(設定値)</option>
 					</c:if>
 				</select> 日</li>
 
 			<li>職業<br>
 				<select id="job" name="job">
 					<option value=""></option>
-					<option value="会社員">会社員</option>
-					<option value="自営業">自営業</option>
-					<option value="学生">学生</option>
-					<option value="その他">その他</option>
+					<option value="100">会社員</option>
+					<option value="200">自営業</option>
+					<option value="300">学生</option>
+					<option value="400">その他</option>
 					<c:if test="${not empty mb.job}">
-						<option value = "${mb.job}" selected>${mb.job}</option>
+						<c:choose>
+							<c:when test="${mb.job == '会社員'}">
+								<option value="100" selected>会社員(設定値)</option>
+							</c:when>
+							<c:when test="${mb.job == '自営業'}">
+								<option value="200" selected>自営業(設定値)</option>
+							</c:when>
+							<c:when test="${mb.job == '学生'}">
+								<option value="300" selected>学生(設定値)</option>
+							</c:when>
+							<c:when test="${mb.job == 'その他'}">
+								<option value="400" selected>その他(設定値)</option>
+							</c:when>
+						</c:choose>
 					</c:if>
 				</select></li>
 
