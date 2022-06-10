@@ -27,22 +27,10 @@ for(let i = 1; i <= 31; i++){
 
 
 /* フォームのバリデーションチェック*/
-const searchBtn = document.getElementById("search");
 const submitBtn = document.getElementById("submit");
-
-searchBtn.addEventListener('click',(e)=>{
-
-	const member_id = document.getElementById("member_id");
-	if(member_id.value == ""){
-		e.preventDefault();
-		window.alert("会員番号は必須入力項目です。")
-	}
-
-});
 
 submitBtn.addEventListener('click',(e) =>{
 
-	const member_id = document.getElementById("member_id").value;
 	const last_name = document.getElementById("last_name").value;
 	const first_name = document.getElementById("first_name").value;
 	const sex = document.getElementsByName("sex");
@@ -60,10 +48,7 @@ submitBtn.addEventListener('click',(e) =>{
 		}
 	}
 
-	if(member_id == ""){
-		e.preventDefault();
-		window.alert("会員番号は必須入力項目です")
-	}else if(last_name == ""){
+	if(last_name == ""){
 		e.preventDefault();
 		window.alert("名前_姓は必須入力項目です")
 	}else if(first_name == ""){
@@ -93,7 +78,3 @@ submitBtn.addEventListener('click',(e) =>{
 	}
 
 });
-
-
-
-
